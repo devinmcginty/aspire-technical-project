@@ -1,0 +1,9 @@
+runtime: python38
+
+entrypoint: gunicorn --chdir ./app/src/ -b :$PORT app:app
+
+env_variables:
+  FLASK_APP: "app/src/app.py"
+  FIREBASE_JSON_KEY: "./key.json"
+  FIREBASE_DB_IDENTIFIER: "aspire-ca3d0-default-rtdb"
+
